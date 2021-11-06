@@ -1,19 +1,8 @@
-chrome.contextMenus.create({
-    title: "Discard Tab",
-    contexts: ["all"],
-    id: "discard-current-tab",
-});
-chrome.contextMenus.create({
-    title: "Discard All Inactive Background Tab",
-    contexts: ["all"],
-    id: "discard-all-other-tab",
-});
-
+// functions
 const discardTab = (tab) => {
     let id = tab.id;
     chrome.tabs.discard(id);
 };
-
 const discardAllOtherTab = () => {
     chrome.tabs.query(
         {
@@ -29,6 +18,19 @@ const discardAllOtherTab = () => {
     );
 };
 
+// create context menus
+chrome.contextMenus.create({
+    title: "Discard Tab",
+    contexts: ["all"],
+    id: "discard-current-tab",
+});
+chrome.contextMenus.create({
+    title: "Discard All Inactive Background Tab",
+    contexts: ["all"],
+    id: "discard-all-other-tab",
+});
+
+// handle context menu clicks
 chrome.contextMenus.onClicked.addListener((info, tab) => {
     switch (info.menuItemId) {
         case "discard-current-tab":
