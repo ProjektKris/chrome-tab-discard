@@ -9,6 +9,8 @@ const discardAllOtherTab = () => {
             active: false,
             discarded: false,
             highlighted: false,
+            pinned: false,
+            audible: false,
         },
         (tabs) => {
             for (backgroundTabs in tabs) {

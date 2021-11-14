@@ -2,7 +2,7 @@
     "manifest_version": 2,
     "name": "Tab Discard",
     "description": "A simple Chromium tab discarder that relies on keyboard shortcuts for input.",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "background": {
         "scripts": ["background.js"]
     },
