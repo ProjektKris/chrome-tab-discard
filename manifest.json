@@ -1,23 +1,28 @@
 {
-    "manifest_version": 2,
+    "manifest_version": 3,
     "name": "Tab Discard",
     "description": "A simple Chromium tab discarder that relies on keyboard shortcuts for input.",
     "version": "0.1.1",
     "background": {
-        "scripts": ["background.js"]
+        "service_worker": "background.js"
     },
     "permissions": ["contextMenus", "tabs"],
     "commands": {
         "discard-current-tab": {
             "suggested_key": {
                 "default": "Alt+X",
+                "windows": "Alt+X",
+                "linux": "Alt+X",
                 "mac": "Alt+X"
             },
             "description": "Discard the current tab."
         },
         "discard-all-other-tab": {
             "suggested_key": {
-                "default": "Alt+Shift+X"
+                "default": "Alt+Shift+X",
+                "windows": "Alt+Shift+X",
+                "linux": "Alt+Shift+X",
+                "mac": "Alt+Shift+X"
             },
             "description": "Discard all inactive background tabs that are not selected."
         }
